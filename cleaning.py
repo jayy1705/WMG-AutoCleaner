@@ -116,7 +116,7 @@ RAW_NAME_GROUP_PAIRS = [
     ('V SEGAR MART SDN BHD (SUNGAI SIPUT)', 'V SEGAR MART'),
 ]
 
-# 2. VALIDATION — catches conflicting duplicate keys
+# 2. VALIDATION
 def validate_mapping(pairs):
     """
     Scan a list of (raw_name, group_name) pairs for raw_names that appear
@@ -217,7 +217,7 @@ def convert_econsave_names(df: pd.DataFrame, name_col: str = "Name") -> pd.DataF
 def apply_grouping(
     df: pd.DataFrame,
     name_col: str = "Name",
-    group_col: str = "group",
+    group_col: str = "Group",
     mapping: dict = None,
     default: str = "Other",
 ) -> pd.DataFrame:
@@ -247,7 +247,7 @@ def unmatched_names(df: pd.DataFrame, name_col: str = "Name", mapping: dict = No
 def process(
     df: pd.DataFrame,
     name_col: str = "Name",
-    group_col: str = "group",
+    group_col: str = "Group",
     handle_econsave: bool = True,
 ) -> pd.DataFrame:
     """
